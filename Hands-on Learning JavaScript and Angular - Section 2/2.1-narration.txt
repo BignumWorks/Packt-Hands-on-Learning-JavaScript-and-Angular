@@ -26,6 +26,11 @@ Set up:
   
   And there it is, your first angular app up and running.
   
+  The page you see here is controlled by AppComponent i.e. app.component.ts file. you can consider it as a root component, we will learn more about compoents in the next video.
+  
+  
+  Thanks for watching.
+  
   
   
 
