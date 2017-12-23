@@ -1,0 +1,10 @@
+Welcome to fourth and final video of section 2
+
+In this video we will talk about directives:
+Agenda:
+- What are directives in angular
+- types of directives in angular
+- Demo!!
+
+
+
