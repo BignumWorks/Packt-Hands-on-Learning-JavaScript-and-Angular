@@ -1,0 +1,14 @@
+Hello and welcome to section 3 
+Services and dependencies in Angular.
+
+in this section we will revisit our example where we were loading mock data for countries and destinations, we will
+how components should only worry about rendering data on browser while the task of fetching that data should be delegated
+to other objects.
+
+Welcome to first video of this section
+IN this video we will learn about what are services in angular, when to use them and most importantly how to use them.
+
+Agenda for this video:
+- What are services in angular?
+- Why use services in angular?
+- Demo!
