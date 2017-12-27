@@ -1,0 +1,73 @@
+
+Welcome to 2nd video of this section:
+Title :Components in angular
+
+In this video we will learn 
+
+- What are components in AngularJS
+- And how to use them
+- Also in this video we will start on building our own travel app,
+and we will be building iteratively on this app in the coming videos.
+
+
+- Lets get rid of all the default view provided to us by angular cli.
+// here delete everything after </div> i.e. first div completes.
+
+- In the app.componemt.ts (typescript file , please note this ts file gets transpiled into normal js code)
+- rename the attribtue title to "My travel blog"
+- you should see "Welcome to mytravel blog rendering on the browser. If not please check if your ng serve command is running or not.
+
+- Alright we are good to start with creating our first component.
+- we are going to create a index list for our travel blog which will maintain list of countries that blog wants to talk about
+
+command: ng generate component index-list
+you should see a new folder created under /src/app called index-list
+angular-cli to the rescue again, bueatifully does all mundane boilerplate tasks.
+
+// lets talk about the component being generated here, this holds for all components as well
+1. Components are the fundamental building blocks of an angular application
+2.  Each component ideally controlls a patch of screen on browser which is called view of the component.
+2.1 this view of a component is defined using templates here, index-list.component.html
+2.2 are nothing but simple html markup along with some angularized tags. 
+We will learn about this in this video it self.
+3. What makes a component a component really is the @Component decorator, 
+without it index-list.component.ts is just a class.
+3.1 Lets talk briefly about the meta tags inside @Component decorator
+3.1.1 selector: its a css selector that tells angular to inject this components markup whereever it finds 
+<app-index-list></app-index-list>
+
+3.1.2 templateURL: locates view of a component.
+3.1.3 styleURL: css to deocatate the above view. This enables each component to be self sufficient 
+in terms of styling and view.
+
+
+- Now create two classes country and destinations 
+inside /src/app
+the relationship between classes: country in a class that can have multiple destinations objects
+please notes these classes are NOT angular components, these are just OO way of encapsulating data.
+
+- lets create mock countries and destinations, in the coming modules of this course we will see how we 
+can fetch this information through remote calls.
+
+create two files called mock-destinations.ts and mock-countries.ts both inside /src/app
+// please talk through creating these mock files, you should use copy and paste if possible in order to save typing time.
+
+- now import COUNTRIES mock file in to index-list.component.ts and assign it to a local variable in the class
+as shown in the line no. 16
+- now come to index-list html template
+and create template specific for this component. as shown in the code.
+
+copy the css in the code to component specific css file.
+
+// Please note use of *ngFor, these are called angular directives we will come back to them in coming videos.
+
+Now you should see list of conutries being rendered on the broeser.
+
+
+
+
+
+
+
+
+

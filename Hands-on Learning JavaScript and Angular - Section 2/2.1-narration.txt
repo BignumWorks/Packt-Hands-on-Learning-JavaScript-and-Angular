@@ -1,0 +1,40 @@
+
+Why do we need angular?
+- so far we have seen and experienced that even small js apps can be extremely verbose in nature,
+- moreover repo structure of your project has no convention/rules imposed which made making big enterprise level web apps quite painful.
+- Hence with evolution of FE technologies need of frameworks that can take care of all the mundane boilerplate stuff was felt.
+
+Angular is one of the example of several frameworks which tries to address similar problems.
+
+What is Angular:
+- Angular is a platform that makes it easy to build applications with the web. 
+- Angular lets you define componens for your various FE flow, essentially these components shall own one dedicated task in your app. 
+    - This is extreamly helpful while coding big enterprise level apps.
+- Angular also provide several interesting features like dependency injection, about which we will learn more in the coming course.
+
+Set up:
+- Install node and its package manager (npm ), please use npm version 6.10.X or above as angular works best with 6.10.x and above.
+- Install angular cli util, this is one such example where angular help us eliminate the effort of writing boiler plate configs.
+  - command: #npm install -g @angular/cli (if you face any issues while running this, please try to run it as root/admin user)
+- Test corrent cli installation by typing ng command on terminal/cmd (should not give any errors)
+- Now create a new project 
+  - command: #ng new my-first-app
+  
+- run your first app
+  - command #ng serve --open
+  
+  
+  And there it is, your first angular app up and running.
+  
+  The page you see here is controlled by AppComponent i.e. app.component.ts file. you can consider it as a root component, we will learn more about compoents in the next video.
+  
+  
+  Thanks for watching.
+  
+  
+  
+
+
+
+
+
