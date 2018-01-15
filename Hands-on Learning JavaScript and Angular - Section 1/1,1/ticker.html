@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>
+            my first app!
+        </title>
+        <script>
+            function forward() {
+                var boxHandle = document.getElementById('box');
+                var boxVal = parseInt(boxHandle.value);
+                boxHandle.value = boxVal + 1;
+            }
+            function backward() {
+                var boxHandle = document.getElementById('box');
+                var boxVal = parseInt(boxHandle.value);
+                boxHandle.value = boxVal - 1;
+            }
+            function reseter() {
+                alert ('You have reset your progress :(');
+                var boxHandle = document.getElementById('box');
+                var boxVal = parseInt(boxHandle.value);
+                boxHandle.value = 1;
+            }
+        </script>
+    </head>
+    <body>
+        <h2>Ahhoy! This is my first ticker app.</h2>
+        <br>
+
+        Click me to tick fwd:
+        <button id='fwd' onclick='forward()'>+</button>
+
+        <br>
+        Click me to tick back:
+        <button id='back' onclick='backward()'>-</button>
+
+        <br>
+        Click me to reset tick count:
+        <button id='reset' onclick='reseter()'>r</button>
+
+        <br>
+        <input type='text' id='box' value='1'/>
+    </body>
+</html>
