@@ -45,7 +45,28 @@ export class LoggerService {
 
 **************************
 
+**************country service code*********
+@Injectable()
+export class CountryService {
 
+  // constructor(@Optional() private loggerService: LoggerService) { }
+  constructor(private loggerService: LoggerService) { }
+
+  getCountries(): Observable<Country[]> {
+    this.loggerService.log("Getting list of countries..");
+    return of(COUNTRIES);
+  }
+
+  // getCountries(): Observable<Country[]> {
+  //   if (this.loggerService) {
+  //      this.loggerService.log("Getting list of countries..");
+  //   }
+  //   return of(COUNTRIES);
+  // }
+
+}
+
+**************************
 define log methods, does an output on console.log and now 
 input this service as dependency in CountryService, by including it in its constructor and thats it,
 upon reload of you app on browser you should see logger being invoked and log in console output.
@@ -60,6 +81,9 @@ marked null when not needed.
 
 So far we have seen classes marked as dependencies, well angular allows you to inject objects, string literals etc as dependencies 
 as well.
+
+
+
 
 NON-CLASS DEPENDENCY INJECTIONS:
 This too is a very important functionlity that angular has to offer, as this enables you to 
