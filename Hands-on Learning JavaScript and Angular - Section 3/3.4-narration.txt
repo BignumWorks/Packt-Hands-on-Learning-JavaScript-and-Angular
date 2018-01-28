@@ -24,6 +24,27 @@ SERVICE AS A DEPENDENCY:
 Let create this logger service first.
 use command: ng generate service logger --module=app
 
+**************************
+import { Injectable } from '@angular/core';
+
+@Injectable()
+export class LoggerService {
+
+  constructor() { }
+
+  logs: String[] = [];
+
+  // note this doesnt need observable as there is
+  // remote call involved here.
+  log (line: String) {
+    this.logs.push(line);
+    console.log('LOGGER: '+ line);
+  }
+
+}
+
+**************************
+
 
 define log methods, does an output on console.log and now 
 input this service as dependency in CountryService, by including it in its constructor and thats it,
