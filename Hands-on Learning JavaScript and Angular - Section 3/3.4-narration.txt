@@ -109,10 +109,57 @@ angular internally maintains a token-provider map. for example when we register 
 Here is how we can do this:
 1. Lets create a contract interface that defines the outline of our APP config. Let call it 
 global-config.interface.ts 
+
+--------------
+// simple interface to encapsulate App config.
+
+export interface GlobalConfig {
+    
+    // sample const property i want to consume.
+    APP_TITLE: string;
+
+}
+--------------
 2. Define field you want to be configurable, for now lets have app_title only here.
 3. now lets create a global-config.ts which uses above interface and uses injectiontoken to generate
 token of interface type (refer code)
+--------------
+import { InjectionToken } from  '@angular/core';
+import { GlobalConfig } from './global-config.interface';
+
+export let APP_CONFIG = new InjectionToken<GlobalConfig>('app config');
+
+export const APP_DI_CONFIG: GlobalConfig = {
+    
+    APP_TITLE: 'Vikas\'s awesome travel blog!'
+
+};
+--------------
 4. Now we have token valuetype available as GlobalConfig wrapped around by InjectionToken.
+5. Lets use this value in the app.component.ts file to make the app title config driven:
+---------------
+import { Component, Inject } from '@angular/core';
+
+import { APP_CONFIG} from './global-config';
+import {GlobalConfig} from './global-config.interface'
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  
+  constructor(@Inject( APP_CONFIG ) private config: GlobalConfig) {
+  }
+
+  title: string;
+
+  ngOnInit() {
+    this.title = this.config.APP_TITLE;
+  }
+}
+---------------
 
 Why need InjectionToken class, why not use interface directly insteand, you ask? :)
 Well interfaces are design time concept imposed by Angular framework, when the code gets 
