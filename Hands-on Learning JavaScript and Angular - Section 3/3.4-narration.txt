@@ -161,6 +161,16 @@ export class AppComponent {
 }
 ---------------
 
+----------app.module.ts-----------
+ providers: [CountryService,
+              LoggerService,
+              {
+                provide: APP_CONFIG,
+                useValue: APP_DI_CONFIG
+              }
+            ],
+----------------------------------
+
 Why need InjectionToken class, why not use interface directly insteand, you ask? :)
 Well interfaces are design time concept imposed by Angular framework, when the code gets 
 traspiled into regular JS code, there is no such thing as interfaces and hence that can 
